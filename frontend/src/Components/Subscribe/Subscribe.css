@@ -1,0 +1,51 @@
+.Logincontainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-top: 150px;
+    height: 100px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.Logincontainer > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Logincontainer > form > div {
+    margin: 5px;
+}
+
+.Logincontainer > form > button {
+    height: 20px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 21px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Logincontainer > form > button:hover {
+    color: red;
+}
+
+.Logincontainer > form > div > label {
+    font-size: 29px;
+}
+
+.Logincontainer > form > div > input {
+    height: 29px;
+    width: 246px;
+    margin-left: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 3px;
+}

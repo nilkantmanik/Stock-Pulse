@@ -1,0 +1,48 @@
+#linkId{
+    text-decoration: none;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    background-color: ghostwhite;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 3px;
+    color: black;
+}
+
+.homeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.homeContainer > form > ul > li {
+    list-style-type: none;
+    margin: 10px;
+}
+
+.homeContainer > form > label {
+    font-size: 62px;
+}
+
+.homeContainer > form > button {
+    margin-left: 10px;
+    height: 39px;
+    width: 78px;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.homeContainer > form > input {
+    height: 35px;
+    width: 216px;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 21px;
+    padding: 3px;
+}

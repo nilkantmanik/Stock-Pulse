@@ -1,0 +1,15 @@
+.NewsItemContainer > div > img{
+    width: 100%;
+    border: 1px solid black;
+}
+.NewsItemContainer > div > div{
+    text-align: center;
+}
+
+.NewsItemContainer{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
