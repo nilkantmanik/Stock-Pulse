@@ -4,13 +4,15 @@ import "./Subscribe.css"
 export default function Login() {
 
     const [email, setEmail] = useState("")
+    const [phno, setphno] = useState("")
+    const [name, setname] = useState("")
 
     let handleEmailChange = (event) => {
         setEmail(event.target.value);
     }
 
     let handleSubmit = (event) => {
-        fetch('http://localhost:3000/subscribe', {
+        fetch('http://localhost:4000/subscribe', {
         method : "POST",
         mode: 'cors',
         body : JSON.stringify({email : email}),
