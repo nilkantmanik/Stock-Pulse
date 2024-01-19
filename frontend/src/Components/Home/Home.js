@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
-import axios from 'axios';
+import axios from "axios";
 
 export default function Home(props) {
   let navigate = useNavigate();
@@ -13,29 +13,34 @@ export default function Home(props) {
   const [suggestion, setSuggestion] = useState([]);
 
   let handleSearchBoxChange = async (e) => {
-    e.preventDefault();
-  
+    // e.preventDefault();
+
+    setSearchBox(e.target.value);
+
     try {
-      const response = await axios.get(`http://localhost:4000/suggestion?keyword=${e.target.value}`);
-      const arr_values = response.data.data || [];
+      const response = await axios.get(
+        // `http://localhost:4000/suggestion?keyword=${e.target.value}`
+        `http://localhost:4000/dummyarray?keyword=${e.target.value}`
+      );
+      const arr_values = response.data.data.bestMatches
+      || [];
       setSuggestion(arr_values);
-      console.log("arr_values",arr_values);
-  
-      if (arr_values.length > 0) {
-        let len = arr_values.length;
-        console.log(len);
-        setSuggestion([...arr_values]);
-        console.log("myarr",suggestion);
-      }
+      console.log("arr_values", arr_values);
+
+      console.log("myarr", suggestion);
+
+      // if (arr_values.length > 0) {
+      //   let len = arr_values.length;
+      //   console.log(len);
+      //   setSuggestion([...arr_values]);
+      //   console.log("myarr",suggestion);
+      // }
     } catch (error) {
       console.error(error);
       // Handle error as needed
     }
-  
-    setSearchBox(e.target.value);
   };
-  
-  
+
   let handleSubmit = (event) => {
     fetch(`http://localhost:4000/getScrapedData?cName=${searchBox}`)
       .then((res) => res.json())
@@ -53,14 +58,14 @@ export default function Home(props) {
   };
 
   let handleSuggestionClick = (item) => {
-    let instrumentName = item.name.trim() || "";
-    let inputBox = document.getElementById("search");
-    inputBox.value = instrumentName;
-    setSearchBox(instrumentName);
+    let itemname = item['2. name'].trim() || "";
+    // let inputBox = document.getElementById("search");
+    // inputBox.value = instrumentName;
+    setSearchBox(itemname);
 
     // Now you can perform further actions or fetch data based on the selected item
     console.log(item);
-    fetch(`http://localhost:4000/getScrapedData?cName=${instrumentName}`)
+    fetch(`http://localhost:4000/getScrapedData?cName=${itemname}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -71,6 +76,7 @@ export default function Home(props) {
     <>
       <div className="homeContainer">
         <form onSubmit={handleSubmit}>
+          {/* <form onSubmit={() =>{console.log("cliclked")}}> */}
           <label htmlFor="search" style={{ display: "block" }}>
             {" "}
             Search Stock's here
@@ -80,24 +86,42 @@ export default function Home(props) {
             name="search"
             id="search"
             placeholder="Enter stock name"
-            value={searchBox || ""}
+            value={searchBox}
             onChange={handleSearchBoxChange}
           />
 
+          {/* onClick={handleSubmit} */}
           <button type="submit" onClick={handleSubmit}>
             Search
           </button>
 
           <ul>
-            {suggestion.length === 0 ? (
+            {/* {suggestion.data.length === 0 ? ( 
               <p></p>
-            ) : (
-              suggestion.map((item, index) => (
+            ) : ( */}
+            {/* {suggestion.data &&  suggestion.data.map((item, index) => (
+
+              
+              
                 <li key={index} className="myList" onClick={() => handleSuggestionClick(item)}>
-                  {item.name}
+                  {item.symbol }
+                  {console.log("here")}
                 </li>
               ))
-            )}
+            } */}
+
+            {searchBox && suggestion &&
+              suggestion.map((item, index) => (
+                <li
+                  key={index}
+                  // className="myList"
+                  onClick={() => handleSuggestionClick(item)}
+                  className="suggestionli"
+                >
+                  {item['2. name']}
+                  {console.log(item['2. name'])}
+                </li>
+              ))}
           </ul>
         </form>
       </div>

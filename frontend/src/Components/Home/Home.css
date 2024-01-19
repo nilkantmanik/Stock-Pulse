@@ -1,48 +1,45 @@
-#linkId{
-    text-decoration: none;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    background-color: ghostwhite;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-left: 3px;
-    color: black;
-}
-
 .homeContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    margin-top: 100px;
-}
-
-.homeContainer > form > ul > li {
-    list-style-type: none;
-    margin: 10px;
-}
-
-.homeContainer > form > label {
-    font-size: 62px;
-}
-
-.homeContainer > form > button {
-    margin-left: 10px;
-    height: 39px;
-    width: 78px;
-    font-size: 17px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-.homeContainer > form > input {
-    height: 35px;
-    width: 216px;
-    font-size: 17px;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin-top: 21px;
-    padding: 3px;
-}
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 96%;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .suggestionli {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .suggestionli:hover {
+    background-color: #ddd;
+  }
+  

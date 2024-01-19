@@ -10,54 +10,55 @@ const axios = require("axios");
 
 router.get("/dummyarray", async (req, res) => {
   // Your /dummyarray route logic
+  let d=[
+    {
+      "1. symbol": "B",
+      "2. name": "Barnes Group Inc",
+      "3. type": "Equity",
+      "4. region": "United States",
+      "5. marketOpen": "09:30",
+      "6. marketClose": "16:00",
+      "7. timezone": "UTC-04",
+      "8. currency": "USD",
+      "9. matchScore": "1.0000",
+    },
+    {
+      "1. symbol": "B.TRV",
+      "2. name": "BCM Resources Corp",
+      "3. type": "Equity",
+      "4. region": "Toronto Venture",
+      "5. marketOpen": "09:30",
+      "6. marketClose": "16:00",
+      "7. timezone": "UTC-05",
+      "8. currency": "CAD",
+      "9. matchScore": "0.5000",
+    },
+    {
+      "1. symbol": "B02.FRK",
+      "2. name": "NUEV.EXP.TEX.INH.EO-016",
+      "3. type": "Equity",
+      "4. region": "Frankfurt",
+      "5. marketOpen": "08:00",
+      "6. marketClose": "20:00",
+      "7. timezone": "UTC+02",
+      "8. currency": "EUR",
+      "9. matchScore": "0.3333",
+    },
+    {
+      "1. symbol": "B0R.FRK",
+      "2. name": "Bathurst Resources Ltd",
+      "3. type": "Equity",
+      "4. region": "Frankfurt",
+      "5. marketOpen": "08:00",
+      "6. marketClose": "20:00",
+      "7. timezone": "UTC+02",
+      "8. currency": "EUR",
+      "9. matchScore": "0.3333",
+    },
+  ]
   res.status(200).json({
     success: true,
-    data: [
-      {
-        "1. symbol": "B",
-        "2. name": "Barnes Group Inc",
-        "3. type": "Equity",
-        "4. region": "United States",
-        "5. marketOpen": "09:30",
-        "6. marketClose": "16:00",
-        "7. timezone": "UTC-04",
-        "8. currency": "USD",
-        "9. matchScore": "1.0000",
-      },
-      {
-        "1. symbol": "B.TRV",
-        "2. name": "BCM Resources Corp",
-        "3. type": "Equity",
-        "4. region": "Toronto Venture",
-        "5. marketOpen": "09:30",
-        "6. marketClose": "16:00",
-        "7. timezone": "UTC-05",
-        "8. currency": "CAD",
-        "9. matchScore": "0.5000",
-      },
-      {
-        "1. symbol": "B02.FRK",
-        "2. name": "NUEV.EXP.TEX.INH.EO-016",
-        "3. type": "Equity",
-        "4. region": "Frankfurt",
-        "5. marketOpen": "08:00",
-        "6. marketClose": "20:00",
-        "7. timezone": "UTC+02",
-        "8. currency": "EUR",
-        "9. matchScore": "0.3333",
-      },
-      {
-        "1. symbol": "B0R.FRK",
-        "2. name": "Bathurst Resources Ltd",
-        "3. type": "Equity",
-        "4. region": "Frankfurt",
-        "5. marketOpen": "08:00",
-        "6. marketClose": "20:00",
-        "7. timezone": "UTC+02",
-        "8. currency": "EUR",
-        "9. matchScore": "0.3333",
-      },
-    ],
+    data: {bestMatches:d}
   });
 });
 

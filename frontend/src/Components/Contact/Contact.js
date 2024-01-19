@@ -74,21 +74,21 @@ export default function Contact() {
                 <form action="" onSubmit={handleContactSubmit}>
                     <div>
                         <label htmlFor="name" style = {{ whiteSpace: "pre" }}>Name : {`${'            '}`}</label>
-                        <input type="text" name="name" id="name" onChange={handleNameChange}/> 
+                        <input type="text" name="name" id="name" onChange={handleNameChange} style={{width:'70%'}}/> 
                     </div>
                     <div id="phnodiv">
                         <label htmlFor="phno" style = {{ whiteSpace: "pre" }}>Phone no. : {`${'    '}`}</label>
-                        <input type="number" name="phno" id="phno" onChange={handlePhnoChange}/>
+                        <input type="number" style={{width:'70%'}} name="phno" id="phno" onChange={handlePhnoChange}/>
                     </div>
                     <div>
                         <label htmlFor="email" style = {{ whiteSpace: "pre" }}>Email : {`${'             '}`}</label>
-                        <input type="email" name="email" id="email" onChange={handleEmailChange}/>
+                        <input type="email" style={{width:'70%'}} name="email" id="email" onChange={handleEmailChange}/>
                     </div>
                     <div>
                         <label htmlFor="message">write your comment here : </label>
                     </div>
                     <div>
-                        <textarea rows="10" cols="60" name="message" id="message" onChange={handleQuaryChange}>
+                        <textarea rows="10" cols="60" name="message" id="message" onChange={handleQuaryChange} style={{width:'90%'}}>
                         </textarea>
                     </div>
                     <div>

@@ -1,56 +1,51 @@
-.DetailsContainer{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: row;
-    border: 2px solid red;
-    border-radius: 20px;
-    background-color: rgb(111, 111, 95);
-    height: 300px;
-    width: 80%;
-    margin: auto;
-    margin-top: 100px;
-}
+/* Add these styles to your Details.css file */
 
-.DetailsContainer > ul{
+.DetailsContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  span {
+    font-weight: bold;
+  }
+  
+  .mySpan {
+    color: #007bff; /* or your preferred color */
+  }
+  
+  #linkId {
+    display: block;
+    margin-top: 20px;
     text-align: center;
     padding: 10px;
-    list-style-type: none;
-}
-
-.DetailsContainer > ul > li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid yellow;
-    border-radius: 10px;
-    height: 36px;
-    width: 286px;
-    margin: 10px
-}
-
-.DetailsContainer > button {
-    position: sticky;
-}
-
-#linkId{
+    background-color: #007bff;
+    color: #fff;
     text-decoration: none;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 10px;
-    background-color: ghostwhite;
-    padding: 3px;
-}
-
-.mySpan {
-    border : 2px solid sienna;
-    border-radius: 3px;
-    background-color: sienna;
-    margin-left: 10px;
-}
+    border-radius: 4px;
+  }
+  
+  #linkId:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: Style for the overall page */
+  body {
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+  }
+  
