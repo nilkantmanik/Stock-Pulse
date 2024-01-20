@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import axios from "axios";
 
-export default function Home(props) {
+export default function Home() {
   let navigate = useNavigate();
 
-  const [data, setData] = useState(null);
+  const [sdata, setData] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
   // const [showSuggestion, setShowSuggestion] = useState([false, false, false, false, false, false]);
   const [searchBox, setSearchBox] = useState("");
@@ -47,7 +47,7 @@ export default function Home(props) {
       .then((data) => {
         console.log(data);
         setData(data);
-        props.setMakeEmpty(true);
+        console.log(sdata)
         setShowDetails(true);
         navigate({
           pathname: "/Details",
@@ -65,6 +65,7 @@ export default function Home(props) {
 
     // Now you can perform further actions or fetch data based on the selected item
     console.log(item);
+    console.log(showDetails);
     fetch(`http://localhost:4000/getScrapedData?cName=${itemname}`)
       .then((res) => res.json())
       .then((data) => {

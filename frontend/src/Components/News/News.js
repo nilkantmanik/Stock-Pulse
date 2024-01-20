@@ -4,26 +4,23 @@ import './News.css';
 
 const News = () => {
     const [articles, setArticles] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [page, setPage] = useState(1);
+    // const [loading, setLoading] = useState(false);
+    // const [page, setPage] = useState(1);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                setLoading(true);
-                const url = `https://newsapi.org/v2/top-headlines?category=business&country=in&apiKey=af4400b4baae40f8a4bb5a1cd09ea853&page=${page}`;
+                const url = `https://newsapi.org/v2/top-headlines?category=business&country=in&apiKey=af4400b4baae40f8a4bb5a1cd09ea853&page=${1}`;
                 const data = await fetch(url);
                 const parsedData = await data.json();
                 setArticles(parsedData.articles);
             } catch (error) {
                 console.error('Error fetching data:', error);
-            } finally {
-                setLoading(false);
-            }
+            } 
         };
 
         fetchData();
-    }, [page]);
+    }, []);
 
     return (
         <>

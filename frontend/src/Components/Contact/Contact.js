@@ -9,7 +9,9 @@ export default function Contact() {
     
     const [email,  setEmail] = useState("")
     
-    const [dummy,  setDummy] = useState("")
+    // const [dummy,  setDummy] = useState("")
+
+    let dummy ="";
 
     const [quary,  setQuary] = useState("")
 
@@ -28,10 +30,10 @@ export default function Contact() {
         setEmail(e.target.value);
       };
 
-      let handleDummyChange = e => {
-        e.persist();
-        setDummy(e.target.value);
-      };
+    //   let handleDummyChange = e => {
+    //     e.persist();
+    //     setDummy(e.target.value);
+    //   };
 
       let handleQuaryChange = e => {
         e.persist();

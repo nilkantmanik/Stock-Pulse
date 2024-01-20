@@ -225,4 +225,8 @@ router.get("/getScrapedData", async (req, res) => {
   }
 });
 
+router.get('/', (req, res) => {
+  return res.send('Welcome to Node js, express js in Docker , Kepp going');
+});
+
 module.exports = router;

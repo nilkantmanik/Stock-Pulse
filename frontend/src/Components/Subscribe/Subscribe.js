@@ -4,8 +4,8 @@ import "./Subscribe.css"
 export default function Login() {
 
     const [email, setEmail] = useState("")
-    const [phno, setphno] = useState("")
-    const [name, setname] = useState("")
+    // const [phno, setphno] = useState("")
+    // const [name, setname] = useState("")
 
     let handleEmailChange = (event) => {
         setEmail(event.target.value);
