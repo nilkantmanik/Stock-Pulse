@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
 
 
+const mongo_uri = "mongodb://root:nilkant7259@mongo:27017/StockPulse";
 
-let mongo_uri="mongodb://root:secret@mongo:27017/Helputrade?authSource=admin"
+// mongodb://root:nilkant7259@mongo:27017/StockPulse
 
 const connectDB = ()=>{
 

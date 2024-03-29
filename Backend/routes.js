@@ -229,4 +229,17 @@ router.get('/', (req, res) => {
   return res.send('Welcome to Node js, express js in Docker , Kepp going');
 });
 
+router.get('/contactlist', async(req, res) => {
+  try {
+    
+    const contacts = await Contacts.find();
+
+    res.status(200).json({ data: contacts });
+  } catch (err) {
+    res.status(500).json({ success: false });
+  }
+});
+
 module.exports = router;
+
+

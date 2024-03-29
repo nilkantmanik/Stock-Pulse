@@ -42,7 +42,7 @@ export default function Contact() {
 
 
     let handleContactSubmit = (event) => {
-        fetch('http://localhost:3000/contactSubmit', {
+        fetch(`http://localhost:4000/contactSubmit`, {
             method : "POST",
             mode: 'cors',
             body : JSON.stringify({
